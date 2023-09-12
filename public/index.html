@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather sounds</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="cards">
+
+      <div class="cards_bg" id="cards_bg"></div>
+
+      <div class="cards_content">
+
+        <header>
+          <h1 class="title">Weather sounds</h1>
+        </header>
+
+        <div class="controls">
+          <div id="sun" class="card sun"></div>
+          <div id="rain" class="card rain"></div>
+          <div id="snow" class="card snow"></div>
+        </div>
+
+        <input type="range" min="0" max="1" value="0.5" step="0.1" id="volume" class="volume">
+
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

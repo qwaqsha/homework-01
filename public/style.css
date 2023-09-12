@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(fonts/Roboto-Medium.ttf);
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  /* position: relative; */
+}
+
+/* .debug {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  min-width: 375px;
+  min-height: 100%;
+  padding: 1em;
+  background-color: grey;
+}
+
+.cards {
+  position: relative;
+  padding: 1em;
+  flex-basis: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cards_bg {
+  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 1em;
+}
+
+.cards_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+header > .title {
+  font-size: clamp(2.75em, 5vw, 4em);
+  color: #f17038;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: min(3vw, 4em);
+}
+
+@media (max-width: 375px) {
+  .controls {
+    flex-direction: column;
+  }
+}
+
+.volume {
+  min-width: max(10vw, 6em);
+}
+
+.card {
+  aspect-ratio: 1;
+  position: relative;
+  min-width: max(9vw, 6em);
+  background-size: cover;
+  border: 2px solid #b7b093;
+  border-radius: 1em;
+}
+
+.card::after {
+  aspect-ratio: 1;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card.paused::after {
+  background-image: url('/assets/icons/pause.svg');
+}
+
+.sun {
+  background-image: url('assets/summer-bg.jpg');
+}
+
+.sun.active::after {
+  background-image: url('/assets/icons/sun.svg');
+}
+
+.rain {
+  background-image: url('assets/rainy-bg.jpg');
+}
+
+.rain.active::after {
+  background-image: url('/assets/icons/cloud-rain.svg');
+}
+
+.snow {
+  background-image: url('assets/winter-bg.jpg');
+}
+
+.snow.active::after {
+  background-image: url('/assets/icons/cloud-snow.svg');
+}
